@@ -1,4 +1,42 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1> Register </h1>
+<div class="content-section">
+    <form method="POST" action="">
+        <div class="form-group">
+            {{form.email.label(class="form-control-label")}}
+            {% if form.email.errors %}
+            {{form.email(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                <span> {{error}} </span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{form.email(class="form-control form-control-lg")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{form.phone.label(class="form-control-label")}}
+            {% if form.phone.errors %}
+            {{form.phone(class="form-control form-control-lg is-invalid")}}
+            {% for error in form.phone.errors %}
+            <span> {{error}} </span>
+            {% endfor %}
+            {% else %}
+            {{form.phone(class="form-control form-control-lg")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{form.password.label(class="form-control-label")}}
+            {% if form.password.errors %}
+            {{form.password(class="form-control form-control-lg is-invalid")}}
+            {% for error in form.password.errors %}
+            <span> {{error}} </span>
+            {% endfor %}
+            {% else %}
+            {{form.password(class="form-control form-control-lg")}}
+            {% endif %}
+        </div>
+    </form>
+</div>
 {% endblock %}
