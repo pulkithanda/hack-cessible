@@ -5,38 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='/css/index.css')}}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">    {% if title %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">                         
+    {% if title %}
     <title> COVID-19 {{title}} </title>
     {% else %}
     <title> COVID19 </title>
     {% endif %}
-
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!--Inline CSS-->
+    <style>
+      nav{
+        background : #2c4d63;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      body{
+        background-color: #eee;
+      }
+ 
+    </style>
 </head>
-
 <body>
     <header>
-        <nav class="navbar fixed-top navbar-expand-md" id="nav">
-            <a href="#" class="navbar-brand"><img src="https://blog.hubspot.com/hubfs/image8-2.jpg" alt="logo" height="60px" width="60px"></a>
-            <button class="navbar-toggler navbar-light" data-toggle="collapse" data-target=".menu">
-              <span class="navbar-toggler-icon"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <div class="collapse navbar-collapse nav menu">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-              </ul>
-            <div class="collapse navbar-collapse nav menu login"></div>
-              <ul class="navbar-nav">
-                <li class="nav-item sign"><a href=""  class="nav-link log">Log in</a></li>
-                <li class="nav-item sign"><a href=""  class="nav-link log">Register</a></li>
-              </ul>
-            </div>  
-            </div>
-          </nav>
+      <nav class="navbar fixed-top navbar-expand-md" id="nav">
+        <a href="#" class="navbar-brand">Team Name</a>
+        <button class="navbar-toggler navbar-light" data-toggle="collapse" data-target=".menu">
+          <span class="navbar-toggler-icon"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse nav menu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          </ul>
+        <div class="collapse navbar-collapse nav menu login"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item sign"><a href=""  class="nav-link log">Log In</a></li>
+            <li class="nav-item sign"><a href=""  class="nav-link log">Register</a></li>
+          </ul>
+        </div>  
+        </div>
+      </nav>
     </header>
     {% block content %}
     {% endblock %}
