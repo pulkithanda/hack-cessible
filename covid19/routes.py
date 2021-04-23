@@ -1,6 +1,7 @@
 from flask import Flask
 from flask.templating import render_template
 from covid19 import app
+from covid19.forms import RegistrationForm
 
 
 @app.route("/home")
@@ -19,6 +20,7 @@ def login():
     return render_template("login.html", title="Login")
 
 
-@app.route("/register")
+@app.route("/register", methods=['GET', 'POST'])
 def register():
-    return render_template('register.html', title="Register")
+    form = RegistrationForm()
+    return render_template('register.html', title="Register", form=form)
