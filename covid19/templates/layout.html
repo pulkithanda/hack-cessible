@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,13 +14,86 @@
     {% else %}
     <title> COVID19 </title>
     {% endif %}
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!--Inline CSS-->
+    <style>
+      nav{
+        background : #2c4d63;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      body{
+        background-color: #eee;
+      }
+      nav ul li {
+        margin: 0.3rem;
+        padding: 5px;
+      }
 
+      nav ul li a:after, a.active:after {
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s;
+      }
+      nav ul li a:hover:after{
+        transform-origin: bottom left;
+        transform: scaleX(1);       
+      }
+      nav ul li a{
+        text-decoration: none;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        color: white;
+        padding: 15px ;
+      }
+      nav ul li a:hover{
+        color: white;
+      }
+      nav .navbar-brand{
+        color: #eee;
+      }
+    </style>
 </head>
-
 <body>
-    <div class="navbar">
-        <p> Navbar </p>
-    </div>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-md" id="nav">
+        <a href="#" class="navbar-brand">Team Name</a>
+        <button class="navbar-toggler navbar-light" data-toggle="collapse" data-target=".menu">
+          <span class="navbar-toggler-icon"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse nav menu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          </ul>
+        <div class="collapse navbar-collapse nav menu login"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item sign"><a href=""  class="nav-link log">Log In</a></li>
+            <li class="nav-item sign"><a href=""  class="nav-link log">Register</a></li>
+          </ul>
+        </div>  
+        </div>
+      </nav>
+    </header>
     {% block content %}
     {% endblock %}
     <!-- Scripts -->
@@ -33,5 +107,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
-
-</html>
+<!--js-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script></html>
