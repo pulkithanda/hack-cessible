@@ -1,3 +1,26 @@
+
+
+/*General Styling*/
+html{
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body{
+    background-color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Pre Loader*/
+#loader{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  overflow: visible;
+  background: #000 url('https://i.pinimg.com/originals/61/fc/ef/61fcef6b7ac47210565db63d27dc0b03.gif') no-repeat center center;
+}
+/*nav*/
 .content-section {
     background: #ffffff;
     padding: 10px 20px;
@@ -10,9 +33,6 @@ nav{
     font-family: 'Open Sans', sans-serif;
     font-size: 24px;
     font-weight: 600;
-  }
-  body{
-    background-color: #eee;
   }
   nav ul li {
     margin: 0.3rem;
@@ -53,3 +73,13 @@ nav{
   nav .navbar-brand{
     color: #eee;
   }
+/*Forms*/
+.content-section{
+  padding-top: 7.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 7.5rem;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+/*Responsive*/
