@@ -2,7 +2,7 @@ from enum import unique
 from sqlalchemy.orm import backref
 from covid19 import db
 from datetime import datetime
-db.create_all()
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,11 +25,11 @@ class User(db.Model):
     # def is_anonymous(self):
     #     return False
 
-    def __init__(self, uid, uemail, upassword, uphone):
-        self.id = uid
-        self.email = uemail
-        self.password = upassword
-        self.phone = uphone
+    # def __init__(self, uid, uemail, upassword, uphone):
+    #     self.id = uid
+    #     self.email = uemail
+    #     self.password = upassword
+    #     self.phone = uphone
 
 
 class Posts(db.Model):

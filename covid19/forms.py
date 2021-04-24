@@ -14,14 +14,14 @@ class RegistrationForm(FlaskForm):
     phone = StringField("phone", validators=[DataRequired(), Length(10, 13)])
     submit = SubmitField("Sign Up")
 
-    # def validate_email(self, email):
-    #     if User:
-    #         emailval = User.query.filter_by(email=email.data).first()
-    #         if emailval:
-    #             raise ValidationError(
-    #                 "There is already an account with this email. Please log in instead")
-    #     else:
-    #         pass
+    def validate_email(self, email):
+        if User:
+            emailval = User.query.filter_by(email=email.data).first()
+            if emailval:
+                raise ValidationError(
+                    "There is already an account with this email. Please log in instead")
+        else:
+            pass
 
 
 class LoginForm(FlaskForm):
