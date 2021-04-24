@@ -15,6 +15,17 @@ class User(db.Model):
     def __repr__(self):
         return f"User is '{self.email}'"
 
+    ''' needed for flask_login '''
+    authenticated = db.Column(db.Boolean, default=False)
+    def is_active(self):
+        return True
+    def get_id(self):
+        return self.id
+    def is_authenticated(self):
+        return self.authenticated
+    def is_anonymous(self):
+        return False
+
 
 class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
