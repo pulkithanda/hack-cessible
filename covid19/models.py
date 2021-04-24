@@ -41,3 +41,7 @@ class Posts(db.Model):
     city = db.Column(db.String, nullable=False)
     descrip = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
+
+
+
+db.create_all()
