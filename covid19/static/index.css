@@ -1,10 +1,11 @@
-.content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    /* margin-bottom: 20px; */
-  }
+
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans",sans-serif;
+    box-sizing: border-box;
+}
+
 nav{
     background : #2c4d63;
     font-family: 'Open Sans', sans-serif;
@@ -53,3 +54,206 @@ nav{
   nav .navbar-brand{
     color: #eee;
   }
+
+body{
+    min-height: 100vh;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+.about-section{
+    background: url(collage.jpg) no-repeat left;
+    background-size: 45%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.h1{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-family: Merriweather;
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  /* margin-bottom: 20px; */
+}
+
+a {
+  color: #e03a3c;
+}
+a:hover {
+  color: #e76668;
+  text-decoration: none;
+}
+.team .member {
+ margin-bottom: 20px;
+ overflow: hidden;
+ border-radius: 5px;
+ background: #fff;
+}
+
+.team .member .member-img {
+ position: relative;
+ overflow: hidden;
+}
+
+.team .member .social {
+ position: absolute;
+ left: 0;
+ bottom: 30px;
+ right: 0;
+ opacity: 0;
+ transition: ease-in-out 0.3s;
+ text-align: center;
+}
+.team .member:hover .social {
+ opacity: 1;
+ bottom: 15px;
+}
+.team .member .social a {
+ transition: color 0.3s;
+ color: #111111;
+ margin: 0 3px;
+ padding-top: 7px;
+ border-radius: 50px;
+ width: 36px;
+ height: 36px;
+ background: #e03a3c;
+ display: inline-block;
+ transition: ease-in-out 0.3s;
+ color: #fff;
+}
+
+.team .member .social a:hover {
+ background: #111111;
+}
+.team .member .member-info p {
+ font-style: italic;
+ font-size: 14px;
+ line-height: 26px;
+ color: #777777;
+}
+
+.team .member .social i {
+ font-size: 18px;
+}
+
+.team .member .member-info {
+ padding: 25px 15px;
+}
+
+.team .member .member-info h4 {
+ font-weight: 700;
+ margin-bottom: 5px;
+ font-size: 18px;
+ color: #111111;
+}
+
+.team .member .member-info span {
+ display: block;
+ font-size: 13px;
+ font-weight: 400;
+ color: #141313;
+}
+
+/* section */
+section {
+ padding: 60px 0;
+ overflow: hidden;
+ position: relative;
+} 
+
+.section-title {
+ text-align: center;
+ padding-bottom: 30px;
+ position: relative;
+}
+.section-title h2 {
+ font-size: 32px;
+ font-weight: bold;
+ text-transform: uppercase;
+ margin-bottom: 20px;
+ padding-bottom: 20px;
+ position: relative;
+}
+.section-title h2::after {
+ content: "";
+ position: absolute;
+ display: block;
+ width: 50px;
+ height: 3px;
+ background: #e03a3c;
+ bottom: 0;
+ left: calc(50% - 25px);
+}
+.section-title p {
+ margin-bottom: 0;
+}
+
+.section-bg {
+ padding: 120px 0;
+ color: #fff;
+}
+
+.section-bg:before {
+ content: "";
+ background: #1b1b1b;
+ position: absolute;
+ bottom: 60px;
+ top: 60px;
+ left: 0;
+ right: 0;
+ transform: skewY(-3deg);
+}
