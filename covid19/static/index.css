@@ -1,13 +1,11 @@
 
-<<<<<<< HEAD
+
   *{
     margin: 0;
     padding: 0;
     font-family: "Open Sans",sans-serif;
     box-sizing: border-box;
 }
-
-=======
 
 /*General Styling*/
 html{
@@ -37,7 +35,7 @@ body{
     border-radius: 3px;
     /* margin-bottom: 20px; */
   }
->>>>>>> f45ace12d55ae1a34f55a300cfae02252251e68b
+
 nav{
     background : #2c4d63;
     font-family: 'Open Sans', sans-serif;
@@ -83,7 +81,7 @@ nav{
   nav .navbar-brand{
     color: #eee;
   }
-<<<<<<< HEAD
+
 
 body{
     min-height: 100vh;
@@ -298,4 +296,63 @@ section {
   font-size: 24px;
 }
 /*Responsive*/
->>>>>>> f45ace12d55ae1a34f55a300cfae02252251e68b
+
+
+
+/* Posts */
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+.account-heading {
+  font-size: 2.5rem;
+}
+
