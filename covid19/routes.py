@@ -34,19 +34,16 @@ def login():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    if request.method == "POST":
-        if form.validate_on_submit():
-            print(form.email.data)
-            if User.query.filter_by(email=form.email.data):
-                flash("An acc   ount with this email address already exists")
-                return redirect(url_for('login'))
-            hashed_pw = bcrypt.generate_password_has(
-                form.password.data).decode('UTF-8')
-            user = User(email=form.email.data,
-                        password=hashed_pw, phone=form.phone.data)
-            db.session.add(user)
-            db.session.commit()
-
+    if form.validate_on_submit():
+        id = 0
+        ''' TEMPORARY '''
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        phone = request.form['phone']
+        record = User(id, email, password, phone)
+        db.session.add(record)
+        db.session.commit()
     return render_template('register.html', title="Register", form=form)
 
 
