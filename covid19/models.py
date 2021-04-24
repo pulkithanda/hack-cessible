@@ -43,7 +43,13 @@ class Posts(db.Model):
                             default=datetime.utcnow)
     city = db.Column(db.String, nullable=False)
     descrip = db.Column(db.String, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(User.id),
+                        nullable=False)
+
+    def __init__(self, item, city, descrip):
+        self.item = item
+        self.city = city
+        self.descrip = descrip
 
 
 db.create_all()
