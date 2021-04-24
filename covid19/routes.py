@@ -4,6 +4,7 @@ from flask.templating import render_template
 from covid19 import app, login_manager
 from covid19.forms import RegistrationForm, LoginForm
 from covid19.models import User
+from covid19 import db
 
 
 @app.route("/home")
@@ -28,6 +29,16 @@ def login():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    if form.validate_on_submit():
+        id = 0
+        ''' TEMPORARY '''
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        phone = request.form['phone']
+        record = User(id, email, password, phone)
+        db.session.add(record)
+        db.session.commit()
     return render_template('register.html', title="Register", form=form)
 
 
