@@ -35,11 +35,10 @@ def login():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        id = 0
-        ''' TEMPORARY '''
-        name = request.form['name']
+        hashed_pw = bcrypt.generate_password_has(
+            request.form['password']).decode('UTF-8')
         email = request.form['email']
-        password = request.form['password']
+        password = hashed_pw
         phone = request.form['phone']
         record = User(id, email, password, phone)
         db.session.add(record)

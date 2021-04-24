@@ -14,16 +14,20 @@ class User(db.Model):
     def __repr__(self):
         return f"User is '{self.email}'"
 
-    # ''' needed for flask_login '''
-    # authenticated = db.Column(db.Boolean, default=False)
-    # def is_active(self):
-    #     return True
-    # def get_id(self):
-    #     return self.id
-    # def is_authenticated(self):
-    #     return self.authenticated
-    # def is_anonymous(self):
-    #     return False
+    ''' needed for flask_login '''
+    authenticated = db.Column(db.Boolean, default=False)
+
+    def is_active(self):
+        return True
+
+    def get_id(self):
+        return self.id
+
+    def is_authenticated(self):
+        return self.authenticated
+
+    def is_anonymous(self):
+        return False
 
     # def __init__(self, uid, uemail, upassword, uphone):
     #     self.id = uid
@@ -40,7 +44,6 @@ class Posts(db.Model):
     city = db.Column(db.String, nullable=False)
     descrip = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
-
 
 
 db.create_all()
