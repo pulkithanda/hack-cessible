@@ -26,7 +26,7 @@ class LoginForm(FlaskForm):
                              DataRequired(), Length(min=6, message="Invalid password. Passwords must be at least 6 characters long.")])
     submit = SubmitField("Login")
 
-    def validate_login(self, email):
+    def validate_login(self, email,password):
         emailval = User.query.filter_by(email=email.data).first()
         if not emailval:
             raise ValidationError("No account with this email address exists")
