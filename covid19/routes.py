@@ -1,10 +1,11 @@
-from flask import Flask
-import flask_login
+from flask import Flask, redirect, request
+from flask.helpers import flash, url_for
+from flask_login import login_user, current_user
 from flask.templating import render_template
-from covid19 import app, login_manager
+from covid19 import app, login_manager, db
 from covid19.forms import RegistrationForm, LoginForm
 from covid19.models import User
-from covid19 import db
+import bcrypt
 
 
 @app.route("/home")
@@ -22,9 +23,13 @@ def about():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        login_user(user, remember=remember)
-        '''return flask.redirect(flask.url_for('post'), title="Create Post")'''
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and bcrypt.check_password(user.password, form.password.data):
+            login_user(user, remember=form.remember.data)
+            flash('Successfully logged in', 'success')
+            return redirect(url_for('home'))
     return render_template("login.html", title="Login", form=form)
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
